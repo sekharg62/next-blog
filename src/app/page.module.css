@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    
+  }
+  
+  .texts {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .title {
+    font-size: 50px;
+    background: linear-gradient(to bottom,rgb(11, 235, 11),rgb(15, 138, 138));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    color: #f2dbdb;
+    margin-bottom: 1rem;
+  }
+  
+  .desc {
+    font-size: 24px;
+    color: #c6bbbb;
+    margin-bottom: 1.5rem;
+  }
+  
+ 
+  
+  .btn:hover {
+    background-color: #005bb5;
+  }
+  
+  .imgContainer {
+    max-width: 50%;
+  }
+  
+  .heroImg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    animation: move 2s infinite ease alternate;
+  }
+   @keyframes move {
+      from{
+          transform: translateY(-15px);
+      }
+      to{
+          transform: translateY(0px) scale(1.03);
+      }
+      
+   }
