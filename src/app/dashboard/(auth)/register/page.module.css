@@ -1,4 +1,35 @@
-.container{
-    background-color: rgb(9, 210, 255);
-    color: black;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    padding: 20px;
+    background-color: transparent;
+    border: 2px solid grey;
+    border-radius: 5px;
+    color: rgb(8, 252, 0);
+    font-weight: bold;
+
+}
+
+.button {
+    width: 400px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }
