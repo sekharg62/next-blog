@@ -1,20 +1,22 @@
-
-.mainContainer{
-
-}
-.container{
+.container {
     display: flex;
     align-items: center;
     gap: 50px;
     margin-bottom: 50px;
-}
-.img{
+  }
+  
+  .image{
     object-fit: cover;
-}
-.title{
+  }
+  
+  .content {
+  }
+  
+  .title{
     margin-bottom: 10px;
-}
-.desc{
-    font-style: 18px;
+  }
+  
+  .desc{
+    font-size: 18px;
     color: #999;
-}
+  }

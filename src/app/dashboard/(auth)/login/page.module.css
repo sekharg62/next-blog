@@ -1,3 +1,78 @@
-.container{
-    background-color: rgb(49, 65, 120);
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.passwordContainer {
+    position: relative;
+    width: 100%; /* Make the container take up the full width */
+}
+
+.input {
+    width: 100%;
+    padding: 20px;
+    padding-right: 45px; /* Add padding to the right to make space for the icon */
+    background-color: transparent;
+    border: 2px solid grey;
+    border-radius: 5px;
+    color: rgb(8, 252, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: grey;
+    font-size: 24px; /* Adjust icon size */
+}
+
+.button {
+    font-size: 20px;
+    width: 400px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Spacing between icon and text */
+}
+
+.icon {
+    font-size: 24px; /* Adjust icon size */
+}
+
+.button:hover {
+    background-color: darkgreen; /* Darker green on hover */
+}
+
+@media (max-width: 500px) {
+    .form, .button {
+        width: 100%; /* Adjust width to fit smaller screens */
+    }
+
+    .input, .button {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .eyeIcon {
+        font-size: 20px; /* Adjust eye icon size for smaller screens */
+    }
 }

@@ -18,3 +18,19 @@ export const GET = async (request,{params}) => {
 
 
 } 
+export const DELETE = async (request,{params}) => {
+    const {id} = params
+
+    try {
+        await connectToDB();
+        console.log("db connected")
+        await Post.findByIdAndDelete(id)
+        return new NextResponse("Post deleted", { status: 200 });
+
+    } catch (error) {
+        console.log("Error is",error)
+        return new NextResponse("Database Error", error);
+    }
+
+
+} 

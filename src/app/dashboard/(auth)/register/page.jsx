@@ -11,8 +11,11 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value;
+    console.log("Name:",name);
     const email = e.target[1].value;
+    console.log("email:",email);
     const password = e.target[2].value;
+    console.log("pass:",password); 
 
     try {
       const res = await fetch("/api/auth/register", {
@@ -21,13 +24,13 @@ const Register = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name, email, password
+          name, email, password,
         })
       });
 
       if (res.status === 201) {
         router.push("/dashboard/login?success=Account has been created");
-      }
+      } 
     } catch (error) {
       setError(true);
     }
