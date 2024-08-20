@@ -130,3 +130,141 @@
 .button:hover {
   background-color: #0a130b;
 }
+@media (max-width:1450px) {
+  .rightContent{
+    margin-right: 50px;
+  }
+}
+@media (max-width:1200px) {
+  .leftContent {
+    position: fixed;
+    width: 220px; /* Set the width of the sidebar */
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px); /* Full height to match viewport minus top offset */
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable scrolling in the sidebar if content exceeds height */
+    scrollbar-width: none;
+  }
+  
+  /* Right content area */
+  .rightContent {
+    margin-left: 100px; /* Offset by the width of the sidebar + padding */
+    padding: 25px;
+    flex: 1; /* Take up remaining space */
+    /* Full height to match viewport minus top margin */
+    overflow-y: auto; /* Allow scrolling in the right content area */
+    scrollbar-width: none;
+    margin-right: 50px;
+  }
+  .posts {
+    flex: 1;
+    
+    height: calc(100vh - 60px);
+    overflow-y: auto; /* Enable scrolling if posts exceed the available space */
+    scrollbar-width: none;
+  }
+  
+  /* Individual post styling */
+  .post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: transparent;
+  }
+.formContent{
+  position: fixed;
+  width:300px;
+  top: calc(6rem + 12px); /* Offset by the margin-top of .rightContent and padding */
+  right: 25px; /* Align to the right */
+  padding: 10px;
+  border: 0.5px solid #b1aeae;
+  border-radius: 5px;
+  background-color: transparent;
+  color: inherit;
+  z-index: 1000;
+
+}
+.new h1 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+/* Input and textarea styling */
+.input, .textarea {
+  width: 100%;
+  padding: 6px;
+  border: 0.3px solid #847f7f;
+  border-radius: 4px;
+  color: #bbb;
+  font-size: 0.8rem;
+ 
+  font-family: inherit;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.input {
+  height: 45px; 
+  gap:5px;
+ 
+}
+  
+}
+/* Mobile styles */
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    height: auto; /* Let height adjust based on content */
+    overflow: visible; /* Allow content to overflow */
+  }
+
+  .leftContent {
+    position: relative;
+    width: 100%;
+    height: auto; /* Let height adjust based on content */
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .rightContent {
+    margin-left: 0; /* No offset */
+    width: 100%;
+    padding: 15px;
+  }
+
+  .formContent {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    top: 0;
+    right: 0;
+  }
+
+  .posts {
+    margin-right: 0;
+    width: 100%;
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .post {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imgContainer {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .delete {
+    align-self: flex-end;
+  }
+}

@@ -17,7 +17,7 @@ const Dashboard = () => {
   console.log("data:", data)
 
   if (session.status === "loading") {
-    return <p>Loading....</p>
+    return <Loading/>;
   }
 
   if (session.status === 'unauthenticated') {
@@ -72,7 +72,7 @@ const Dashboard = () => {
 
         <div className={styles.rightContent}>
 
-          <div className={styles.posts}>
+           <div className={styles.posts}>
             {isLoading ? <Loading/> : (
               data && data.length > 0 ? (
                 data.map(post => (
@@ -88,7 +88,7 @@ const Dashboard = () => {
                 <p>You have no posts.</p>
               )
             )}
-          </div>
+          </div> 
           <div className={styles.formContent}>
             <form className={styles.new} onSubmit={handleSubmit}  >
               <h1>Add New Post</h1>
