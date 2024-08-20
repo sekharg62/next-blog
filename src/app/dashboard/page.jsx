@@ -17,7 +17,7 @@ const Dashboard = () => {
   console.log("data:", data)
 
   if (session.status === "loading") {
-    return <Loading/>;
+    return <Loading/>
   }
 
   if (session.status === 'unauthenticated') {
