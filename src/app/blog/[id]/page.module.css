@@ -1,3 +1,4 @@
+/* Main container that centers the content */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Top section containing title, description, author, and main image */
 .top {
   display: flex;
   flex-direction: column;
@@ -16,6 +18,7 @@
   flex: 2;
 }
 
+/* Title styling */
 .title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -23,28 +26,33 @@
   color: #333;
 }
 
+/* Description styling */
 .desc {
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 20px;
 }
 
+/* Author section styling */
 .author {
   display: flex;
   align-items: center;
   margin-top: 20px;
 }
 
+/* Author avatar styling */
 .avatar {
   border-radius: 50%;
   margin-right: 10px;
 }
 
+/* Author username styling */
 .username {
   font-weight: bold;
   color: #333;
 }
 
+/* Image container for the main image in the top section */
 .imageContainer {
   flex: 3;
   display: flex;
@@ -52,6 +60,7 @@
   align-items: center;
 }
 
+/* Main image styling */
 .image {
   width: 100%;
   height: auto;
@@ -59,12 +68,55 @@
   border-radius: 10px;
 }
 
+/* Content section for the blog text */
 .content {
   margin-top: 40px;
 }
 
+/* Text styling for the blog content */
 .text {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjust title size for smaller screens */
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  /* Adjust description size for smaller screens */
+  .desc {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Stack author info and center it */
+  .author {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* Center the main image for smaller screens */
+  .imageContainer {
+    justify-content: center;
+  }
+
+  /* Adjust image size and alignment for smaller screens */
+  .image {
+    max-width: 100%;
+  }
+
+  /* Adjust content margin for smaller screens */
+  .content {
+    margin-top: 30px;
+  }
+
+  /* Adjust text size for smaller screens */
+  .text {
+    font-size: 1rem;
+  }
 }

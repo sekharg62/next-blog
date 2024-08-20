@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from 'react-icons/fa';
+import Loading from '@/components/Loading/Loading';
 
 const Login = () => {
   const session = useSession();
@@ -11,7 +12,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   if (session.status === "loading") {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
 
   if (session.status === "authenticated") {

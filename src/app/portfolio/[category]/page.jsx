@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 
 const getData = (cat) => {
   const data = items[cat]
+  //console.log("data:",data)
 
   if (data) {
     
@@ -17,15 +18,16 @@ const getData = (cat) => {
 }
 
 function Category({ params }) {
-  const data = getData(params.category)
   
+  const data = getData(params.category)
+  const cate = params.category.charAt(0).toUpperCase() +  params.category.slice(1)
   return (
     <div className={styles.container}>
-      <h1 className={styles.catTitle}>{params.cat}</h1>
+      <h1 className={styles.catTitle}>{cate}</h1>
       {data.map((item) => (
         <div className={styles.item} key={item.id}>
           <div className={styles.content}>
-            <h1 className={styles.title}>{item.title}</h1>
+            <h2 className={styles.title}>{item.title}</h2>
             <p className={styles.desc}>{item.desc}</p>
             <Button url="#" text="See More" />
           </div>

@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import useSWR from 'swr';
 import Sidebar from '@/components/SideBar/Sidebar';
+import Loading from '@/components/Loading/Loading';
 
 const Dashboard = () => {
   const session = useSession()
@@ -72,7 +73,7 @@ const Dashboard = () => {
         <div className={styles.rightContent}>
 
           <div className={styles.posts}>
-            {isLoading ? "Loading..." : (
+            {isLoading ? <Loading/> : (
               data && data.length > 0 ? (
                 data.map(post => (
                   <div key={post._id} className={styles.post}>

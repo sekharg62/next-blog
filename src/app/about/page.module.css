@@ -1,38 +1,145 @@
-.container{
+/* Main container to wrap the entire content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
   
-}
-.imgContainer{
+  /* Image container styling */
+  .imgContainer {
     width: 100%;
     height: 300px;
     position: relative;
-}
-.img{
+    margin-bottom: 50px;
+  }
+  
+  /* Styling for the image with grayscale effect */
+  .img {
     object-fit: cover;
     filter: grayscale(100%);
-}
-.imgText{
-    position: relative;
-    top: 200px;
+  }
+  
+  /* Styling for text over the image */
+  .imgText {
+    position: absolute;
+    bottom: 20px;
     left: 20px;
-    width: 50% ;
-    background-color: #54755d;
-    color: rgb(51, 43, 43);
-}
-.textContainer{
+    padding: 10px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background for better readability */
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Title in the image text */
+  .imgTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Description in the image text */
+  .imgDesc {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  
+  /* Text container for the main content */
+  .textContainer {
     display: flex;
-    gap: 100px;
-
-}
-.item{
-    flex:1;
+    gap: 50px;
+    flex-wrap: wrap;
     margin-top: 50px;
+  }
+  
+  /* Individual text items styling */
+  .item {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-
-}
-.desc{
-    font-size: 15px;
+    gap: 20px;
+  }
+  
+  /* Title of each section */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Description text */
+  .desc {
+    font-size: 1rem;
     font-weight: 300;
     text-align: justify;
-}
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    /* Adjust image height for smaller screens */
+    .imgContainer {
+      height: 200px;
+    }
+  
+    /* Adjust text in the image for smaller screens */
+    .imgText {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .imgTitle {
+      font-size: 2rem;
+    }
+  
+    .imgDesc {
+      font-size: 1rem;
+    }
+  
+    /* Stack items vertically on smaller screens */
+    .textContainer {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    /* Adjust font size and spacing for smaller screens */
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .desc {
+      font-size: 0.9rem;
+    }
+  
+    .item {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .imgText {
+      width: 100%;
+      left: 0;
+      padding: 10px;
+    }
+  
+    .imgTitle {
+      font-size: 1.5rem;
+    }
+  
+    .imgDesc {
+      font-size: 0.9rem;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  
+    .desc {
+      font-size: 0.8rem;
+    }
+  }
+  

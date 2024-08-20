@@ -1,49 +1,103 @@
-.container{
-    
-}
-.title{
-    font-size: 60px;
-    margin-bottom: 100px;
-    text-align: center ;
-}
-.content{
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .content {
     display: flex;
-    gap: 100px;
+    flex-direction: column-reverse;
     align-items: center;
-
-}
-.imgContent{
-    flex: 1;
-    height: 500px;
+    gap: 50px;
+  }
+  
+  .imgContent {
+    width: 100%;
+    max-height: 500px;
     position: relative;
-}
-.image{
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
     object-fit: contain;
     animation: move 2s infinite ease alternate;
-}
- @keyframes move {
-    from{
-        transform: translateY(-15px);
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(-15px);
     }
-    to{
-        transform: translateY(0px) scale(1.03);
+    to {
+      transform: translateY(0px) scale(1.03);
     }
-    
- }
-.form{
-    flex: 1;
+  }
+  
+  .form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.input, 
-.textarea{
-    padding: 20px;
+  }
+  
+  .input,
+  .textarea {
+    padding: 15px;
     background-color: transparent;
-    border: none;
-    color: rgb(151, 143, 143);
+    border: 2px solid #ccc;
+    color: #333;
     outline: none;
-    border: 2px solid ;
-    font-size: 20px;
-
-}
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .input:focus,
+  .textarea:focus {
+    border-color: #53c28b;
+  }
+  
+  .textarea {
+    resize: vertical;
+  }
+  
+  @media (min-width: 768px) {
+    .content {
+      flex-direction: row;
+      gap: 50px;
+    }
+  
+    .imgContent {
+      flex: 1;
+      height: auto;
+    }
+  
+    .form {
+      flex: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .content {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .input,
+    .textarea {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,39 +1,124 @@
-.mainTitle{
+/* Main Title Styling */
+.mainTitle {
     font-size: 100px;
-
-}
-.selectTitle{
-    margin: 20px 0px;
-}
-.items{
+    text-align: center; /* Center the title */
+    margin: 20px 0; /* Add margin for spacing */
+  }
+  
+  /* Select Title Styling */
+  .selectTitle {
+    margin: 20px 0;
+    text-align: center; /* Center the select title */
+  }
+  
+  /* Items Container Styling */
+  .items {
     display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
     gap: 50px;
-
-}
-.item{
+    justify-content: center; /* Center the items in the container */
+  }
+  
+  /* Individual Item Styling */
+  .item {
     border: 5px solid grey;
     border-radius: 5px;
     height: 400px;
     width: 300px;
     position: relative;
     background-size: cover !important;
-}
-.item:nth-child(1){
-    background: url("/illustration.png");
-}
-.item:nth-child(2){
-    background: url("/websites.jpg");
-}
-.item:nth-child(3){
-    background: url("/apps.jpg");
-}
-.title{
+    background-position: center; /* Center the background image */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  /* Responsive Hover Effect */
+  .item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  /* Background Images */
+  .item:nth-child(1) {
+    background-image: url("/illustration.png");
+  }
+  
+  .item:nth-child(2) {
+    background-image: url("/websites.jpg");
+  }
+  
+  .item:nth-child(3) {
+    background-image: url("/apps.jpg");
+  }
+  
+  /* Title Styling */
+  .title {
     position: absolute;
     right: 10px;
     bottom: 10px;
     font-size: 40px;
-
-}
-.item:hover .title{
+    color: white; /* Ensure text is visible over images */
+  }
+  
+  /* Hover Effect on Title */
+  .item:hover .title {
     color: aqua;
-}
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .mainTitle {
+      font-size: 80px; /* Reduce main title size */
+    }
+  
+    .title {
+      font-size: 35px; /* Adjust title size */
+    }
+  
+    .item {
+      height: 350px;
+      width: 250px; /* Adjust item size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mainTitle {
+      font-size: 60px; /* Further reduce main title size */
+    }
+  
+    .selectTitle {
+      font-size: 28px; /* Reduce select title size */
+    }
+  
+    .items {
+      gap: 30px; /* Reduce gap between items */
+    }
+  
+    .item {
+      height: 300px;
+      width: 100%; /* Make items take full width on smaller screens */
+      max-width: 500px; /* Limit the max width of items */
+    }
+  
+    .title {
+      font-size: 28px; /* Further adjust title size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mainTitle {
+      font-size: 40px; /* Further reduce main title size */
+    }
+  
+    .selectTitle {
+      font-size: 24px; /* Further reduce select title size */
+    }
+  
+    .item {
+      height: 250px; /* Reduce item height */
+      width: 100%; /* Make items take full width */
+    }
+  
+    .title {
+      font-size: 24px; /* Adjust title size */
+    }
+  }
+  

@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { signOut, useSession } from "next-auth/react";
+import Loading from "../Loading/Loading";
 
 const links = [
   { id: 1, title: "Home", url: "/" },
@@ -16,8 +17,11 @@ const links = [
 
 const Navbar = () => {
   const session = useSession();
+  
   const [menuOpen, setMenuOpen] = useState(false);
-
+  if (session.status === "loading") {
+    return <Loading/>;
+  }
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
