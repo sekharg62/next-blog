@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from './page.module.css'
 import Hero from '../../public/hero.png'
-import Button from "@/components/Button.jsx/Button";
+import Button from "@/components/Button/Button";
 export const metadata = {
   title: "Blog App",
   description: "This is description",

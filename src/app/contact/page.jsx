@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import ContactImg from '../../../public/contact.png'
-import Button from '@/components/Button.jsx/Button'
+import Button from '@/components/Button/Button.jsx'
 export const metadata = {
   title: "Blog-Contact",
   description: "This is  description of Contact",
