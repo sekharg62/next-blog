@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './page.module.css';
 import { FaHome, FaUser, FaCog, FaBell, FaEnvelope, FaChartPie, FaFileAlt, FaSignOutAlt, FaShoppingCart } from 'react-icons/fa';
 import { useSession } from 'next-auth/react';
+import Loading from '../Loading/Loading';
 
 const navItems = [
   { name: 'Home', icon: <FaHome />, link: '/dashboard/home' },
