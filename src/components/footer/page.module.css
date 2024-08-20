@@ -1,10 +1,15 @@
-.container{
-    height: 50px;
+.container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-     
-}
+    align-items: center;
+    padding: 20px; /* Adjust padding as needed */
+    
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; /* Ensure it's above other content */
+  }
 .imageContainer{
     display: flex;
     align-items: center;

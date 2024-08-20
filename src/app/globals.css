@@ -20,10 +20,12 @@ a{
 .light{
   background-color: #fff0f0;
   color: #040303;
+  
 }
 .dark{
   background-color: #111;
   color: #bbb;
+
 }
 .container{
   max-width: 1366px;

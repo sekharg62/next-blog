@@ -36,12 +36,14 @@
     flex-direction: column;
     gap: 20px;
 }
-.input, .textarea{
+.input, 
+.textarea{
     padding: 20px;
     background-color: transparent;
     border: none;
+    color: rgb(151, 143, 143);
     outline: none;
-    border: 2px solid grey;
+    border: 2px solid ;
     font-size: 20px;
 
 }

@@ -3,6 +3,14 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }) {
+  const data = await getData(params.id)
+
+  return {
+    title: `${data.title}`,
+  };
+}
+
 async function getData(id) {
   try {
     const res = await fetch(`http://localhost:3000/api/posts/${id}`, {

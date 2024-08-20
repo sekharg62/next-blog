@@ -5,7 +5,7 @@ import ContactImg from '../../../public/contact.png'
 import Button from '@/components/Button.jsx/Button'
 export const metadata = {
   title: "Blog-Contact",
-  description: "This is Contact",
+  description: "This is  description of Contact",
 };
 const Contact = () => {
   return (

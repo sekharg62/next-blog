@@ -2,18 +2,27 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import connectToDB from "@/utils/db";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", {
-    cache: "no-store",
-  });
+  try {
+    connectToDB()
+    const res = await fetch("http://localhost:3000/api/posts", {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    if (!res.ok) {
+      const errorText = await res.text(); // Attempt to get the error text
+      throw new Error(errorText || "Failed to fetch data");
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
+    return []; // Return an empty array if there's an error
   }
-
-  return res.json();
 }
+
 
 const Blog = async () => {
   const data = await getData();
