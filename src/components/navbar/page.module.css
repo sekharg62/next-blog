@@ -1,32 +1,59 @@
 .container {
-    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-     /* Fixes the navbar at the top */
-   gap: 30rem;
-   margin-bottom: 20px;
- 
-   padding: 20px;
-   border-radius: 5px;
-}
-
-.logo {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .logo {
     font-size: 2rem;
     font-weight: bold;
-}
-
-.links {
+  }
+  
+  .links {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.logout {
+  }
+  
+  .logout {
     padding: 5px;
     border: none;
     background-color: green;
     cursor: pointer;
     color: wheat;
     border-radius: 3px;
-}
+  }
+  
+  /* Mobile styles */
+  .menuToggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+  
+    .links.open {
+      display: flex;
+    }
+  
+    .menuToggle {
+      display: block;
+    }
+  }
+  

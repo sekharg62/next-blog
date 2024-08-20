@@ -1,56 +1,112 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+}
+
+.texts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 100%; /* Ensures that text container does not exceed viewport width */
+}
+
+.title {
+  font-size: 50px;
+  background: linear-gradient(to bottom, rgb(11, 235, 11), rgb(15, 138, 138));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  color: #f2dbdb;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 24px;
+  color: #c6bbbb;
+  margin-bottom: 1.5rem;
+}
+
+/* Button hover state */
+.btn:hover {
+  background-color: #005bb5;
+}
+
+.imgContainer {
+  max-width: 50%;
+}
+
+/* Ensure image container adjusts to smaller screens */
+.heroImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: move 2s infinite ease alternate;
+}
+
+/* Animation for the hero image */
+@keyframes move {
+  from {
+    transform: translateY(-15px);
   }
-  
-  .texts {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 50px;
+  to {
+    transform: translateY(0px) scale(1.03);
   }
-  
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
   .title {
-    font-size: 50px;
-    background: linear-gradient(to bottom,rgb(11, 235, 11),rgb(15, 138, 138));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    color: #f2dbdb;
-    margin-bottom: 1rem;
+    font-size: 40px;
   }
-  
+
   .desc {
-    font-size: 24px;
-    color: #c6bbbb;
-    margin-bottom: 1.5rem;
+    font-size: 20px;
   }
-  
- 
-  
-  .btn:hover {
-    background-color: #005bb5;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center; /* Center text on small screens */
   }
-  
+
   .imgContainer {
-    max-width: 50%;
+    max-width: 100%;
+    margin-top: 2rem; /* Adds space between text and image */
   }
-  
-  .heroImg {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    animation: move 2s infinite ease alternate;
+
+  .title {
+    font-size: 30px;
   }
-   @keyframes move {
-      from{
-          transform: translateY(-15px);
-      }
-      to{
-          transform: translateY(0px) scale(1.03);
-      }
-      
-   }
+
+  .desc {
+    font-size: 18px;
+  }
+
+  .texts {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .desc {
+    font-size: 16px;
+  }
+
+  .texts {
+    gap: 20px;
+  }
+
+  .imgContainer {
+    max-width: 100%;
+    margin-top: 1rem; /* Reduces space on very small screens */
+  }
+}

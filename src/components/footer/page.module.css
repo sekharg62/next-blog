@@ -21,3 +21,24 @@
     cursor: pointer;
     
 }
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 768px){
+    .text{
+        font-size: 15px;
+    }
+    .icon{
+        transform: scale(1.1);
+    }
+
+}
+@media (max-width: 480px){
+    .text{
+        font-size: 10px;
+    }
+    .icon{
+        transform: scale(0.8);
+    }
+
+}
