@@ -9,19 +9,19 @@ import Sidebar from '@/components/SideBar/Sidebar';
 import Loading from '@/components/Loading/Loading';
 
 const Dashboard = () => {
-  const session = useSession()
-  const router = useRouter()
+  const session = useSession();
+  const router = useRouter();
 
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, mutate, error, isLoading } = useSWR(`/api/posts?username=${session?.data?.user.name}`, fetcher)
-  console.log("data:", data)
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data, mutate, error, isLoading } = useSWR(`/api/posts?username=${session?.data?.user.name}`, fetcher);
+  console.log("data:", data);
 
   if (session.status === "loading") {
-    return <Loading/>
+    return <Loading />;
   }
 
   if (session.status === 'unauthenticated') {
-    router?.push('/dashboard/login')
+    router?.push('/dashboard/login');
     return null; // Ensure nothing is rendered while redirecting
   }
 
@@ -46,34 +46,33 @@ const Dashboard = () => {
           username: session.data.user.name // Corrected this line
         })
       });
-      mutate()
+      mutate();
     } catch (error) {
       console.log('ERROR:', error);
     }
-  }
+  };
 
   const handleDelete = async (id) => {
     try {
       await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
-      mutate() // Update the data after deletion to reflect the changes
+      mutate(); // Update the data after deletion to reflect the changes
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   if (session.status === 'authenticated') {
     return (
       <div className={styles.container}>
         <div className={styles.leftContent}>
-          <Sidebar />
+          <Sidebar username={session.data.user.name} />
         </div>
 
         <div className={styles.rightContent}>
-
-           <div className={styles.posts}>
-            {isLoading ? <Loading/> : (
+          <div className={styles.posts}>
+            {isLoading ? <Loading /> : (
               data && data.length > 0 ? (
                 data.map(post => (
                   <div key={post._id} className={styles.post}>
@@ -88,25 +87,24 @@ const Dashboard = () => {
                 <p>You have no posts.</p>
               )
             )}
-          </div> 
+          </div>
+
           <div className={styles.formContent}>
-            <form className={styles.new} onSubmit={handleSubmit}  >
+            <form className={styles.new} onSubmit={handleSubmit}>
               <h1>Add New Post</h1>
               <input type="text" placeholder="Enter your post title..." className={styles.input} />
               <input type="text" placeholder="Enter your post description..." className={styles.input} />
-
               <input type="text" placeholder="Enter your post image url..." className={styles.input} />
               <textarea placeholder='Enter your post content...' className={styles.textarea} cols={30} rows={15}></textarea>
               <button className={styles.button}>Send</button>
             </form>
           </div>
-
         </div>
       </div>
     );
   }
 
   return null; // Default return, in case no status matches
-}
+};
 
 export default Dashboard;
